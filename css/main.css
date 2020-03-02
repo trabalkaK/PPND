@@ -1,31 +1,106 @@
-html{scroll-behavior:smooth}
+html {
+  scroll-behavior: smooth;
+}
 body,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      font-family: "Montserrat", sans-serif;
-    }
-    .w3-row-padding img {
-      margin-bottom: 12px;
-    }
-    /* Set the width of the sidebar to 120px */
-    .w3-sidebar {
-      width: 120px;
-      background: #222;
-    }
-    /* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
-    #main {
-      margin-left: 120px;
-    }
-    /* Remove margins from "page content" on small screens */
-    @media only screen and (max-width: 600px) {
-      #main {
-        margin-left: 0;
-      }
-    }
-    .heidht-50{
-        height: 50px;
-    }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", sans-serif;
+}
+.w3-row-padding img {
+  margin-bottom: 12px;
+}
+
+.w3-sidebar {
+  width: 120px;
+  background: #222;
+}
+
+#main {
+  margin-left: 120px;
+}
+.flexRow {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.paddingBottom10 {
+  padding-bottom: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+  #main {
+    margin-left: 0;
+  }
+  .contactPadding {
+    padding-left: 40px;
+  }
+}
+.heidht-50 {
+  height: 50px;
+}
+
+.centerItems{
+  text-align: center;
+}
+
+/* small nav menu */
+
+.navItem{
+  width:25% !important;
+  background-color: #222;
+  font-size: 12px;
+}
+
+/* image modal */
+.close {
+  cursor: pointer;
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.9);
+}
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+/* animations */
+
+.fadeinUp {
+  -webkit-animation: fadeInUp 500ms ease-in-out; /* Chrome, Safari, Opera */
+  animation: fadeInUp 500ms ease-in-out;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+  }
+}

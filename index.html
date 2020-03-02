@@ -30,10 +30,10 @@
 
     <div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
       <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
-        <a href="#" class="w3-bar-item w3-button heidht-50" style="width:25% !important">ÚVOD</a>
-        <a href="#transport" class="w3-bar-item w3-button heidht-50" style="width:25% !important">NAKLADNÁ DOPRAVA</a>
-        <a href="#photos" class="w3-bar-item w3-button heidht-50" style="width:25% !important">FOTKY</a>
-        <a href="#contact" class="w3-bar-item w3-button heidht-50" style="width:25% !important">KONTAKT</a>
+        <a href="#" class="w3-bar-item w3-button heidht-50 navItem centerItems">ÚVOD</a>
+        <a href="#transport" class="w3-bar-item w3-button heidht-50 navItem centerItems">NAKLADNÁ DOPRAVA</a>
+        <a href="#photos" class="w3-bar-item w3-button heidht-50 navItem centerItems">FOTKY</a>
+        <a href="#contact" class="w3-bar-item w3-button heidht-50 navItem centerItems">KONTAKT</a>
       </div>
     </div>
 
@@ -47,8 +47,7 @@
         </header>
         <hr style="width:200px" class="w3-opacity" />
         <p>
-          Spoločnosť Pavol Pekarčík sa zameriava na: vnútroštátnú cestnú nákladnú dopravu, medzinárodnú cestnú nákladnú dopravu.
-          Zabezpečuje prepravu tovaru.
+          Spoločnosť Pavol Pekarčík sa zameriava na: vnútroštátnú cestnú nákladnú dopravu, medzinárodnú cestnú nákladnú dopravu. Zabezpečuje prepravu tovaru.
         </p>
       </div>
 
@@ -74,13 +73,14 @@
 
         <div class="w3-row-padding" style="margin:0 -16px">
           <div class="w3-half">
-            <img src="./images/t2.JPG" style="width:100%" />
-            <img src="./images/t5.jpg" style="width:100%" />
+            <img onclick="openModal(this.src)" src="./images/t6.jpg" style="width:100%" />
+            <img onclick="openModal(this.src)" src="./images/t2.JPG" style="width:100%" />
           </div>
 
           <div class="w3-half">
-            <img src="./images/t3.JPG" style="width:100%" />
-            <img src="./images/t4.jpg" style="width:100%" />
+            <img onclick="openModal(this.src)" src="./images/t3.JPG" style="width:100%" />
+            <img onclick="openModal(this.src)" src="./images/t4.jpg" style="width:100%" />
+            <img onclick="openModal(this.src)" src="./images/t5.jpg" style="width:100%" />
           </div>
         </div>
       </div>
@@ -90,17 +90,49 @@
         <hr style="width:200px" class="w3-opacity" />
 
         <div class="w3-section">
-          <p>
-            <i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i>
-            Adresa: Oravská Jasenica 402, 029 64
-          </p>
-          <p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Tel.: +421 907 105 209</p>
-          <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> Email: palinopek@gmail.com </p>
-          <p><i class="fa fa-calculator fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> Ičo: 37046683</p>
-          <p><i class="fa fa-percent fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> Ič DPH: SK1038828934</p>
+          <div class="flexRow paddingBottom10">
+            <div><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right "></i></div>
+            <div class="verticalMiddle">Adresa: Oravská Jasenica 402, 029 64</div>
+          </div>
+          <div class="flexRow paddingBottom10">
+            <div><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right "></i></div>
+            <div class="verticalMiddle">Tel.: +421 907 105 209</div>
+          </div>
+          <div class="flexRow paddingBottom10">
+            <div><i class="fa  fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right "></i></div>
+            <div class="verticalMiddle">Email: palinopek@gmail.com</div>
+          </div>
+          <div class="flexRow paddingBottom10">
+            <div><i class="fa fa-calculator fa-fw w3-text-white w3-xxlarge w3-margin-right "></i></div>
+            <div class="verticalMiddle">Ičo: 37046683</div>
+          </div>
+          <div class="flexRow paddingBottom10">
+            <div><i class="fa fa-percent fa-fw w3-text-white w3-xxlarge w3-margin-right "></i></div>
+            <div class="verticalMiddle">Ič DPH: SK1038828934</div>
+          </div>
         </div>
         <br />
       </div>
     </div>
+    <div id="myModal" class="modal fadeinUp">
+      <span class="close">&times;</span>
+      <img class="modal-content" id="img01" />
+    </div>
+
+    <script>
+      var modal = document.getElementById("myModal");
+      var modalImg = document.getElementById("img01");
+
+      function openModal(src) {
+        modal.style.display = "block";
+        modalImg.src = src;
+      }
+
+      var span = document.getElementsByClassName("close")[0];
+
+      span.onclick = function() {
+        modal.style.display = "none";
+      };
+    </script>
   </body>
 </html>
